@@ -29,9 +29,9 @@ public class EmpleadoTemporal extends Empleado {
         if (fechaActual.before(fechafinContrato) || fechaActual.equals(fechafinContrato)) {
             return (super.salarioBase / 160) * super.horasTrabajadas;
         }
-        return 0.1;
+        return 0.0;
     }
     public String mostrarInformacion(){
-        return super.mostrarInformacion() + " Fin del contrato " + fechafinContrato.getTime();
+        return super.mostrarInformacion() + " \nFin del contrato " + fechafinContrato.getTime();
     }
 }
