@@ -4,6 +4,7 @@
  */
 package lab2_programacion2q2;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /*
@@ -43,7 +44,8 @@ Atributos:
         this.nombre = nombre;
         this.salarioBase = salarioBase;
         this.horasTrabajadas = horasTrabajadas;
-        fechaContratacion=String.valueOf(Calendar.getInstance());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        fechaContratacion=dateFormat.format(Calendar.getInstance().getTime());
     }
     
     public void registrarHoras(int horas){
