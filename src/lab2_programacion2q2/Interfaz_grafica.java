@@ -1,8 +1,10 @@
 package lab2_programacion2q2;
 
+import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 
@@ -22,7 +24,16 @@ public class Interfaz_grafica {
     JButton salir = new JButton();
     //botones necesario Registrar empleado, registrar horas trabajas, registrar ventas, 
     //actualizar fecha de fin de contrato, calcular pago mensual, generarReportes de empleados y buscar empleados por codigo
+    
+    Empresa emp= new Empresa();
+    
+    public boolean esNumero(String str) {
+    return str.matches("\\d+");
+    }
+    
     public Interfaz_grafica(){
+        
+        
         frame.setLayout(null);
         
         frame.setSize(1300, 1000);
@@ -65,6 +76,41 @@ public class Interfaz_grafica {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setVisible(true);
         
+        registrarEmpleados.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        registrarHoras.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        registrarVentas.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        actualizarFechaFinContrato.addActionListener((ActionEvent e) -> {
+            String codigo = JOptionPane.showInputDialog("Ingrese el codigo del empleado: ");
+            while(esNumero(codigo)==false){
+                codigo = JOptionPane.showInputDialog("Ingreso algo direferente a un numero!\nIngrese el codigo del empleado: ");
+            }
+            
+        });
+
+        calcularPagoMensual.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        generarReportes.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        buscarEmpleadosCodigo.addActionListener((ActionEvent e) -> {
+            
+        });
+
+        salir.addActionListener((ActionEvent e) -> {
+            System.exit(0);
+        });
         
     }
     
