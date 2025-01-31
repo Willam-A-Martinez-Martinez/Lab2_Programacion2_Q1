@@ -17,4 +17,5 @@ public class Lab2_Programacion2Q2 {
         // TODO code application logic here
     }
     
+    
 }
