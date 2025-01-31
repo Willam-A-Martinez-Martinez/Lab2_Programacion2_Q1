@@ -49,11 +49,33 @@ Atributos:
     public void registrarHoras(int horas){
         horasTrabajadas+=horas;
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getFechaContratacion() {
+        return fechaContratacion;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public int getHorasTrabajadas() {
+        return horasTrabajadas;
+    }
+    
+    
     
     //Cálculo de pago: Calcula el salario proporcional según las horas trabajadas, tomando un mes estándar de 160 horas como base.
     //Para empleados estándar, se aplica una deducción fija del 3.5%.
     public double calculoPago(int horas){
-        return (horas/160)*salarioBase;
+        return (horas/160)*salarioBase-(((horas/160)*salarioBase)*0.35);
     }    
     
 //    Mostrar información: Devuelve una cadena que incluye el código, el nombre y la fecha de contratación del empleado.
