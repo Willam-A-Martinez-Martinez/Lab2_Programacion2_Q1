@@ -52,14 +52,14 @@ public class Empresa {
                 int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dia de fin de contrato:"));
                 fechaFinContrato.set(anio, mes, dia);
                 if (fechaFinContrato.before(Calendar.getInstance())) {
-                    JOptionPane.showMessageDialog(null, "Error: La fecha de fin de contrato no puede ser anterior a la fecha actual.");
+                    JOptionPane.showMessageDialog(null, "Error: La fecha de fin de contrato no puede ser anterior a la fecha actual");
                     return;
                 }
                 empleado = new EmpleadoTemporal(fechaFinContrato, codigo, nombre, salarioBase, horasTrabajadas);
             } else if (tipoEmpleado.equalsIgnoreCase("Ventas")) {
                 double comision = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la comision del empleado (porcentaje):"));
                 if (comision < 0) {
-                    JOptionPane.showMessageDialog(null, "Error: La comision no puede ser negativa.");
+                    JOptionPane.showMessageDialog(null, "Error: La comision no puede ser negativa");
                     return;
                 }
                 empleado = new EmpleadoVentas(codigo, nombre, salarioBase, horasTrabajadas, comision);
@@ -68,16 +68,16 @@ public class Empresa {
             }
 
             empleados.add(empleado);
-            JOptionPane.showMessageDialog(null, "Empleado registrado correctamente.");
+            JOptionPane.showMessageDialog(null, "Empleado registrado correctamente");
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Error: Ingreso de datos invalido. Asegurese de ingresar valores numericos correctos.");
+            JOptionPane.showMessageDialog(null, "Error: Ingreso de datos invalido. Asegurese de ingresar valores numericos correctos");
         }
 
     }
 
     public void registrarHoras(int codigo, int horas) {
         if (horas < 0) {
-            JOptionPane.showMessageDialog(null, "Error: Las horas trabajadas no pueden ser negativas.");
+            JOptionPane.showMessageDialog(null, "Error: Las horas trabajadas no pueden ser negativas");
             return;
         }
         for (Empleado e : empleados) {
